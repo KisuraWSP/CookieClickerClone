@@ -1,4 +1,5 @@
-# RaylibWasm
+# RaylibWasm (Readme for project)
+- I cloned this project from https://github.com/Kiriller12/RaylibWasm and deployed on github pages via https://kisurawsp.github.io/CookieClickerClone/
 
 .Net 8+ webasssembly starter project using raylib-cs nuget.
 
@@ -47,7 +48,12 @@ dotnet tool install --global dotnet-serve
 
 And then just call this command to start web server for your build:
 ```
-dotnet serve --mime .wasm=application/wasm --mime .js=text/javascript --mime .json=application/json --directory RaylibWasm\bin\Release\net8.0\browser-wasm\AppBundle\
+// windows command
+dotnet serve --mime .wasm=application/wasm --mime .js=text/javascript --mime .json=application/json --directory RaylibWasm\bin\Release\net10.0\browser-wasm\AppBundle\
+
+// linux & macos
+dotnet serve --mime .wasm=application/wasm --mime .js=text/javascript --mime .json=application/json --directory RaylibWasm/bin/Release/net10.0/browser-wasm/AppBundle/
+
 ```
 
 While server is running you can use publish command to update your files without any need to restart server.
