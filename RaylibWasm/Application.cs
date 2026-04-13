@@ -1,21 +1,19 @@
 ﻿using System.Runtime.InteropServices.JavaScript;
 using Raylib_cs;
+using game;
 
 namespace RaylibWasm
 {
     public partial class Application
     {
-        private static Texture2D logo;
-        
         /// <summary>
         /// Application entry point
         /// </summary>
         public static void Main()
         {
-            Raylib.InitWindow(1280, 720, "RaylibWasm");
+            Raylib.InitWindow(1000, 550, "Cookie Clicker Clone");
+            Game.Init();
             Raylib.SetTargetFPS(60);
-            
-            logo = Raylib.LoadTexture("Resources/raylib_logo.png");
         }
 
         /// <summary>
@@ -25,14 +23,8 @@ namespace RaylibWasm
         public static void UpdateFrame()
         {
             Raylib.BeginDrawing();
-
-            Raylib.ClearBackground(Color.Black);
-
-            Raylib.DrawFPS(4, 4);
-            Raylib.DrawText("All systems operational!", 4, 32, 20, Color.Maroon);
-            
-            Raylib.DrawTexture(logo, 4, 64, Color.White);
-
+                Raylib.ClearBackground(Color.Orange);
+                Game.DrawAndUpdate();
             Raylib.EndDrawing();
         }
     }
